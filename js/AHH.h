@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 #include <stdarg.h>
+#include <stdint.h>
 #include <float.h>
 
 #ifdef __cplusplus
@@ -29,6 +30,25 @@ int __res;										\
 __res = ((unsigned long) n) % (unsigned) base;	\
 n = ((unsigned long) n) / (unsigned) base;		\
 __res; })
+
+typedef struct {
+	uint64_t	rbx;
+	uint64_t	rsp;
+	uint64_t	rbp;
+
+	uint64_t	rdi;
+	uint64_t	rsi;
+	uint64_t	r12;
+	uint64_t	r13;
+	uint64_t	r14;
+	uint64_t	r15;
+	uint64_t	rip;
+	uint64_t	rxCsr;
+	uint8_t	xmm_buffer[160];
+} __attribute__((aligned(8))) jmp_buf[1];
+
+extern unsigned int setjmp(jmp_buf env) __attribute__((returns_twice));
+extern void longjmp(jmp_buf env, unsigned int value) __attribute__((noreturn));
 
 EXPOSEC void* memset(void* buf, int c, int n);
 EXPOSEC void* memcpy(void* dest, const void* src, size_t n);

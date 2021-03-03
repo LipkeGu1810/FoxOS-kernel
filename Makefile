@@ -6,18 +6,22 @@ rwildcard=$(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(su
 CPPSRC = $(call rwildcard,./,*.cpp)
 ASMSRC = $(call rwildcard,./,*.asm)
 CSRC = $(call rwildcard,./,*.c)
+ASSRC = $(call rwildcard,./,*.S)
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(CPPSRC))
 OBJS += $(patsubst %.asm, $(OBJDIR)/%.o, $(ASMSRC))
 OBJS += $(patsubst %.c, $(OBJDIR)/%.o, $(CSRC))
+OBJS += $(patsubst %.S, $(OBJDIR)/%.o, $(ASSRC))
 DIRS = $(wildcard ./)
 
 CC = gcc
 ASM = nasm
 LD = ld
+AS = as
 
 CPPFLAGS = -ffreestanding -fshort-wchar -mno-red-zone -Iinclude -fno-use-cxa-atexit -fno-rtti -fno-exceptions -fno-leading-underscore -Wno-builtin-declaration-mismatch
 CFLAGS = -Wall -fno-stack-protector -Iinclude -Wno-builtin-declaration-mismatch -Wno-discarded-qualifiers
 ASMFLAGS = -f elf64
+ASFLAGS = 
 LDFLAGS = -static -Bsymbolic -nostdlib -Tlink.ld
 
 foxkrnl.elf: $(OBJS)
@@ -43,6 +47,12 @@ $(OBJDIR)/%.o: %.c
 	@echo CC $^
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c -o $@ $^
+
+
+$(OBJDIR)/%.o: %.S
+	@echo AS $^
+	@mkdir -p $(@D)
+	@$(AS) $(ASFLAGS) -c -o $@ $^
 
 setup:
 	@mkdir $(BUILDDIR)

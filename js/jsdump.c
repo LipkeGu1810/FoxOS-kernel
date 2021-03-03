@@ -139,7 +139,7 @@ static void pc(int c)
 
 static void ps(const char *s)
 {
-	fputs(s, stdout);
+	puts(s);
 }
 
 static void pn(int n)

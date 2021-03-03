@@ -1,7 +1,7 @@
 #ifndef mujs_h
 #define mujs_h
 
-#include <setjmp.h> /* required for setjmp in fz_try macro */
+#include "../js/AHH.h"
 
 #ifdef __cplusplus
 extern "C" {
