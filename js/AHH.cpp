@@ -488,3 +488,11 @@ EXPOSEC int strncmp( const char * s1, const char * s2, size_t n ){
 EXPOSEC void putchar(char c) {
 	renderer::global_font_renderer->printf("%c", c);
 }
+
+EXPOSEC bool isfinite(double __x){ 
+	return __builtin_isfinite(__x); 
+}
+
+EXPOSEC bool signbit(double __x){ 
+	return __builtin_signbit(__x);
+}

@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdarg.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include <float.h>
 
 #ifdef __cplusplus
@@ -75,6 +76,8 @@ EXPOSEC void not_implemented(const char* __file, unsigned int __line);
 EXPOSEC int atoi(char* str);
 EXPOSEC int strncmp( const char * s1, const char * s2, size_t n );
 EXPOSEC void putchar(char c);
+EXPOSEC bool isfinite(double __x);
+EXPOSEC bool signbit(double __x);
 
 #define assert(expr)														\
 	((void) sizeof ((expr) ? 1 : 0), __extension__ ({						\
