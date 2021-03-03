@@ -413,3 +413,48 @@ EXPOSEC int printf(const char *fmt, ...) {
 
 	return printed;
 }
+
+
+EXPOSEC const char* strstr(const char* X, const char* Y) {
+	if (*Y == '\0') {
+		return X;
+	}
+ 
+	for (int i = 0; i < strlen((char*) X); i++) {
+		if (*(X + i) == *Y) {
+			char* ptr = (char*) strstr(X + i + 1, Y + 1);
+			return (ptr) ? ptr - 1 : NULL;
+		}
+	}
+	return NULL;
+}
+
+EXPOSEC char* strchr(const char* s, int c) {
+	if(s == NULL) {
+		return NULL;
+	}
+	while(*s) {
+		if(*s == (char) c) {
+			return (char*) s;
+		}
+		s++;
+	}
+	return NULL;
+}
+
+EXPOSEC char* strrchr (const char* s, int c) {
+	const char *found, *p;
+
+	c = (unsigned char) c;
+	if (c == '\0') {
+		return strchr (s, '\0');
+	}
+
+	found = NULL;
+	while ((p = strchr (s, c)) != NULL) {
+		found = p;
+		s = p + 1;
+	}
+
+	return (char*) found;
+}

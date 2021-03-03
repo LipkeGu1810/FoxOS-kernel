@@ -233,7 +233,7 @@ void js_gc(js_State *J, int report)
 
 	if (report) {
 		char buf[256];
-		snprintf(buf, sizeof buf, "garbage collected: %d/%d envs, %d/%d funs, %d/%d objs, %d/%d strs",
+		sprintf(buf, "garbage collected: %d/%d envs, %d/%d funs, %d/%d objs, %d/%d strs",
 			genv, nenv, gfun, nfun, gobj, nobj, gstr, nstr);
 		js_report(J, buf);
 	}

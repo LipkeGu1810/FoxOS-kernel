@@ -64,9 +64,13 @@ EXPOSEC double fmod(double a, double b);
 EXPOSEC double pow(double x,double y);
 EXPOSEC void __assert_fail(const char* __assertion, const char* __file, unsigned int __line);
 EXPOSEC void exit(int num);
+EXPOSEC void exit(int num);
 EXPOSEC void puts(char* str);
 EXPOSEC int sprintf(char *buf, const char *fmt, ...);
 EXPOSEC int printf(const char *fmt, ...);
+EXPOSEC const char* strstr(const char* X, const char* Y);
+EXPOSEC char* strchr(const char* s, int c);
+EXPOSEC char* strrchr (const char* s, int c);
 
 #define assert(expr)														\
 	((void) sizeof ((expr) ? 1 : 0), __extension__ ({						\
