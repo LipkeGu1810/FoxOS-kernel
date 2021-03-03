@@ -7,31 +7,14 @@
 
 static double Now(void)
 {
-#if defined(__unix__) || defined(__APPLE__)
-	struct timeval tv;
-	gettimeofday(&tv, NULL);
-	return floor(tv.tv_sec * 1000.0 + tv.tv_usec / 1000.0);
-#elif defined(_WIN32)
-	struct _timeb tv;
-	_ftime(&tv);
-	return tv.time * 1000.0 + tv.millitm;
-#else
-	return time(NULL) * 1000.0;
-#endif
+	printf("Not implemented yet!\n");
+	exit(0xf00d);
 }
 
 static double LocalTZA(void)
 {
-	static int once = 1;
-	static double tza = 0;
-	if (once) {
-		time_t now = time(NULL);
-		time_t utc = mktime(gmtime(&now));
-		time_t loc = mktime(localtime(&now));
-		tza = (loc - utc) * 1000;
-		once = 0;
-	}
-	return tza;
+	printf("Not implemented yet!\n");
+	exit(0xf00d);
 }
 
 static double DaylightSavingTA(double t)

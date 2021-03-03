@@ -22,8 +22,8 @@ static void *js_defaultalloc(void *actx, void *ptr, int size)
 
 static void js_defaultreport(js_State *J, const char *message)
 {
-	fputs(message, stderr);
-	fputc('\n', stderr);
+	printf(message);
+	putc('\n');
 }
 
 static void js_defaultpanic(js_State *J)
@@ -182,60 +182,9 @@ void js_loadstringE(js_State *J, const char *filename, const char *source)
 	js_endtry(J);
 }
 
-void js_loadfile(js_State *J, const char *filename)
-{
-	FILE *f;
-	char *s;
-	int n, t;
-
-	f = fopen(filename, "rb");
-	if (!f) {
-		js_error(J, "cannot open file '%s': %s", filename, strerror(errno));
-	}
-
-	if (fseek(f, 0, SEEK_END) < 0) {
-		fclose(f);
-		js_error(J, "cannot seek in file '%s': %s", filename, strerror(errno));
-	}
-
-	n = ftell(f);
-	if (n < 0) {
-		fclose(f);
-		js_error(J, "cannot tell in file '%s': %s", filename, strerror(errno));
-	}
-
-	if (fseek(f, 0, SEEK_SET) < 0) {
-		fclose(f);
-		js_error(J, "cannot seek in file '%s': %s", filename, strerror(errno));
-	}
-
-	if (js_try(J)) {
-		fclose(f);
-		js_throw(J);
-	}
-	s = js_malloc(J, n + 1); /* add space for string terminator */
-	js_endtry(J);
-
-	t = fread(s, 1, (size_t)n, f);
-	if (t != n) {
-		js_free(J, s);
-		fclose(f);
-		js_error(J, "cannot read data from file '%s': %s", filename, strerror(errno));
-	}
-
-	s[n] = 0; /* zero-terminate string containing file data */
-
-	if (js_try(J)) {
-		js_free(J, s);
-		fclose(f);
-		js_throw(J);
-	}
-
-	js_loadstring(J, filename, s);
-
-	js_free(J, s);
-	fclose(f);
-	js_endtry(J);
+void js_loadfile(js_State *J, const char *filename){
+	printf("Not implemented yet!\n");
+	exit(0xf00d);
 }
 
 int js_dostring(js_State *J, const char *source)
@@ -403,56 +352,8 @@ int js_ploadbin(js_State *J, const char *source, int length)
 
 void js_loadbinfile(js_State *J, const char *filename)
 {
-	FILE *f;
-	char *s;
-	int n, t;
-
-	f = fopen(filename, "rb");
-	if (!f) {
-		js_error(J, "cannot open file '%s': %s", filename, strerror(errno));
-	}
-
-	if (fseek(f, 0, SEEK_END) < 0) {
-		fclose(f);
-		js_error(J, "cannot seek in file '%s': %s", filename, strerror(errno));
-	}
-
-	n = ftell(f);
-	if (n < 0) {
-		fclose(f);
-		js_error(J, "cannot tell in file '%s': %s", filename, strerror(errno));
-	}
-
-	if (fseek(f, 0, SEEK_SET) < 0) {
-		fclose(f);
-		js_error(J, "cannot seek in file '%s': %s", filename, strerror(errno));
-	}
-
-	if (js_try(J)) {
-		fclose(f);
-		js_throw(J);
-	}
-	s = js_malloc(J, n);
-	js_endtry(J);
-
-	t = fread(s, 1, (size_t)n, f);
-	if (t != n) {
-		js_free(J, s);
-		fclose(f);
-		js_error(J, "cannot read data from file '%s': %s", filename, strerror(errno));
-	}
-
-	if (js_try(J)) {
-		js_free(J, s);
-		fclose(f);
-		js_throw(J);
-	}
-
-	js_loadbin(J, s, n);
-
-	js_free(J, s);
-	fclose(f);
-	js_endtry(J);
+	printf("Not implemented yet!\n");
+	exit(0xf00d);
 }
 
 int js_ploadbinfile(js_State *J, const char *filename)

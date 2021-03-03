@@ -2,6 +2,7 @@
 #define AHH_H
 
 #include <stddef.h>
+#include <stdarg.h>
 #include <float.h>
 
 #ifdef __cplusplus
@@ -10,8 +11,24 @@
 #define EXPOSEC
 #endif
 
+#define ZEROPAD	1
+#define SIGN	2
+#define PLUS	4
+#define SPACE	8
+#define LEFT	16
+#define SMALL	32
+#define SPECIAL	64
+
 #define INFINITY (__builtin_inff())
 #define NAN (__builtin_nanf (""))
+
+#define isdigit(c) (c >= '0' && c <= '9')
+
+#define __do_div(n, base) ({					\
+int __res;										\
+__res = ((unsigned long) n) % (unsigned) base;	\
+n = ((unsigned long) n) / (unsigned) base;		\
+__res; })
 
 EXPOSEC void* memset(void* buf, int c, int n);
 EXPOSEC void* memcpy(void* dest, const void* src, size_t n);
@@ -27,6 +44,9 @@ EXPOSEC double fmod(double a, double b);
 EXPOSEC double pow(double x,double y);
 EXPOSEC void __assert_fail(const char* __assertion, const char* __file, unsigned int __line);
 EXPOSEC void exit(int num);
+EXPOSEC void puts(char* str);
+EXPOSEC int sprintf(char *buf, const char *fmt, ...);
+EXPOSEC int printf(const char *fmt, ...);
 
 #define assert(expr)														\
 	((void) sizeof ((expr) ? 1 : 0), __extension__ ({						\

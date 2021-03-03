@@ -711,11 +711,9 @@ js_strtod(const char *string, char **endPtr)
 	if (exp < -maxExponent) {
 		exp = maxExponent;
 		expSign = TRUE;
-		errno = ERANGE;
 	} else if (exp > maxExponent) {
 		exp = maxExponent;
 		expSign = FALSE;
-		errno = ERANGE;
 	} else if (exp < 0) {
 		expSign = TRUE;
 		exp = -exp;

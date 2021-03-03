@@ -2,6 +2,7 @@
 
 #include "regexp.h"
 #include "utf.h"
+#include "AHH.h"
 
 #define emit regemit
 #define next regnext
@@ -835,6 +836,7 @@ Reprog *regcompx(void *(*alloc)(void *ctx, void *p, int n), void *ctx,
 
 	g.pstart = NULL;
 	g.prog = NULL;
+
 
 	if (setjmp(g.kaboom)) {
 		if (errorp) *errorp = g.error;
