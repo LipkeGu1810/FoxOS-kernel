@@ -458,3 +458,33 @@ EXPOSEC char* strrchr (const char* s, int c) {
 
 	return (char*) found;
 }
+
+EXPOSEC void not_implemented(const char* __file, unsigned int __line) {
+	renderer::global_font_renderer->printf("The feature in the file: %s at the line: %d isn't implemented yet!", __file, __line);
+	while(1);
+}
+
+EXPOSEC int atoi(char* str){
+    int res = 0;
+    for (int i = 0; str[i] != '\0'; ++i)
+        res = res * 10 + str[i] - '0';
+ 
+    return res;
+}
+
+EXPOSEC int strncmp( const char * s1, const char * s2, size_t n ){
+	while (n && *s1 && (*s1 == *s2)){
+		++s1;
+		++s2;
+		--n;
+	}
+	if (n == 0) {
+		return 0;
+	} else {
+		return (*(unsigned char*) s1 - *(unsigned char*) s2);
+	}
+}
+
+EXPOSEC void putchar(char c) {
+	renderer::global_font_renderer->printf("%c", c);
+}

@@ -71,6 +71,10 @@ EXPOSEC int printf(const char *fmt, ...);
 EXPOSEC const char* strstr(const char* X, const char* Y);
 EXPOSEC char* strchr(const char* s, int c);
 EXPOSEC char* strrchr (const char* s, int c);
+EXPOSEC void not_implemented(const char* __file, unsigned int __line);
+EXPOSEC int atoi(char* str);
+EXPOSEC int strncmp( const char * s1, const char * s2, size_t n );
+EXPOSEC void putchar(char c);
 
 #define assert(expr)														\
 	((void) sizeof ((expr) ? 1 : 0), __extension__ ({						\
@@ -79,5 +83,7 @@ EXPOSEC char* strrchr (const char* s, int c);
 		else																\
 			__assert_fail (#expr, __FILE__, __LINE__);						\
 	}))
+
+#define uh_oh() not_implemented(__FILE__, __LINE__);
 
 #endif

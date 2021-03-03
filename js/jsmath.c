@@ -32,64 +32,75 @@ static double jsM_round(double x)
 
 static void Math_abs(js_State *J)
 {
-	js_pushnumber(J, fabs(js_tonumber(J, 1)));
+	//js_pushnumber(J, fabs(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_acos(js_State *J)
 {
-	js_pushnumber(J, acos(js_tonumber(J, 1)));
+	//js_pushnumber(J, acos(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_asin(js_State *J)
 {
-	js_pushnumber(J, asin(js_tonumber(J, 1)));
+	//js_pushnumber(J, asin(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_atan(js_State *J)
 {
-	js_pushnumber(J, atan(js_tonumber(J, 1)));
+	//js_pushnumber(J, atan(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_atan2(js_State *J)
 {
 	double y = js_tonumber(J, 1);
 	double x = js_tonumber(J, 2);
-	js_pushnumber(J, atan2(y, x));
+	//js_pushnumber(J, atan2(y, x));
+	uh_oh();
 }
 
 static void Math_ceil(js_State *J)
 {
-	js_pushnumber(J, ceil(js_tonumber(J, 1)));
+	//js_pushnumber(J, ceil(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_cos(js_State *J)
 {
-	js_pushnumber(J, cos(js_tonumber(J, 1)));
+	//js_pushnumber(J, cos(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_exp(js_State *J)
 {
-	js_pushnumber(J, exp(js_tonumber(J, 1)));
+	//js_pushnumber(J, exp(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_floor(js_State *J)
 {
-	js_pushnumber(J, floor(js_tonumber(J, 1)));
+	//js_pushnumber(J, floor(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_log(js_State *J)
 {
-	js_pushnumber(J, log(js_tonumber(J, 1)));
+	//js_pushnumber(J, log(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_pow(js_State *J)
 {
 	double x = js_tonumber(J, 1);
 	double y = js_tonumber(J, 2);
-	if (!isfinite(y) && fabs(x) == 1)
-		js_pushnumber(J, NAN);
-	else
-		js_pushnumber(J, pow(x,y));
+	//if (!isfinite(y) && fabs(x) == 1)
+		//js_pushnumber(J, NAN);
+	//else
+		//js_pushnumber(J, pow(x,y));
+	uh_oh();
 }
 
 static void Math_random(js_State *J)
@@ -105,17 +116,20 @@ static void Math_round(js_State *J)
 
 static void Math_sin(js_State *J)
 {
-	js_pushnumber(J, sin(js_tonumber(J, 1)));
+	//js_pushnumber(J, sin(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_sqrt(js_State *J)
 {
-	js_pushnumber(J, sqrt(js_tonumber(J, 1)));
+	//js_pushnumber(J, sqrt(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_tan(js_State *J)
 {
-	js_pushnumber(J, tan(js_tonumber(J, 1)));
+	//js_pushnumber(J, tan(js_tonumber(J, 1)));
+	uh_oh();
 }
 
 static void Math_max(js_State *J)
@@ -156,7 +170,7 @@ static void Math_min(js_State *J)
 
 void jsB_initmath(js_State *J)
 {
-	J->seed = time(NULL);
+	J->seed = 0;
 
 	js_pushobject(J, jsV_newobject(J, JS_CMATH, J->Object_prototype));
 	{
