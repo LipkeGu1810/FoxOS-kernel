@@ -107,3 +107,8 @@ EXPOSEC void __assert_fail(const char* __assertion, const char* __file, unsigned
 	renderer::global_font_renderer->printf("ASSERT: %s\nFAIL: %s line %d\n", __assertion);
 	while(1);
 }
+
+EXPOSEC void exit(int num) {
+	renderer::global_font_renderer->printf("EXIT: %d\n", num);
+	while(1);
+}

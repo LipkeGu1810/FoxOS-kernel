@@ -26,13 +26,14 @@ EXPOSEC double floor(double x);
 EXPOSEC double fmod(double a, double b);
 EXPOSEC double pow(double x,double y);
 EXPOSEC void __assert_fail(const char* __assertion, const char* __file, unsigned int __line);
+EXPOSEC void exit(int num);
 
 #define assert(expr)														\
 	((void) sizeof ((expr) ? 1 : 0), __extension__ ({						\
 		if (expr)															\
 			;																\
 		else																\
-			__assert_fail (#expr, __FILE__, __LINE__);	\
+			__assert_fail (#expr, __FILE__, __LINE__);						\
 	}))
 
 #endif
