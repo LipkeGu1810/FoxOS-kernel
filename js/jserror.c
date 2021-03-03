@@ -18,11 +18,11 @@ static int jsB_stacktrace(js_State *J, int skip)
 		int line = J->trace[n].line;
 		if (line > 0) {
 			if (name[0])
-				snprintf(buf, sizeof buf, "\n\tat %s (%s:%d)", name, S_EITHER_STR(file, "??"), line);
+				sprintf(buf, "\n\tat %s (%s:%d)", name, S_EITHER_STR(file, "??"), line);
 			else
-				snprintf(buf, sizeof buf, "\n\tat %s:%d", S_EITHER_STR(file, "??"), line);
+				sprintf(buf, "\n\tat %s:%d", S_EITHER_STR(file, "??"), line);
 		} else
-			snprintf(buf, sizeof buf, "\n\tat %s (%s)", S_EITHER_STR(name, "??"), S_EITHER_STR(file, "??"));
+			sprintf(buf, "\n\tat %s (%s)", S_EITHER_STR(name, "??"), S_EITHER_STR(file, "??"));
 		js_puts(J, &sb, buf);
 	}
 	if (sb) {
@@ -93,10 +93,7 @@ static void js_newerrorx(js_State *J, const char *message, js_Object *prototype)
 	} \
 	void js_##name(js_State *J, const char *fmt, ...) { \
 		va_list ap; \
-		char buf[256]; \
-		va_start(ap, fmt); \
-		vsnprintf(buf, sizeof buf, fmt, ap); \
-		va_end(ap); \
+		char* buf = "\nHmm something is wrong and @Glowman554 make me look nice\n"; \
 		js_newerrorx(J, buf, J->Name##_prototype); \
 		js_throw(J); \
 	}

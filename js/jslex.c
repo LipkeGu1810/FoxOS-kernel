@@ -45,7 +45,7 @@ static void jsY_error(js_State *J, const char *fmt, ...)
 
 	char* hmm = "\nHmm something is wrong and @Glowman554 make me look nice\n";
 
-	snprintf(buf, 256, "%s:%d: ", J->filename, J->lexline);
+	sprintf(buf, "%s:%d: ", J->filename, J->lexline);
 	strcat(buf, hmm);
 
 	js_newsyntaxerror(J, buf);

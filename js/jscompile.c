@@ -23,7 +23,7 @@ void jsC_error(js_State *J, js_Ast *node, const char *fmt, ...)
 	char buf[512];
 	char* hmm = "\nHmm something is wrong and @Glowman554 make me look nice\n";
 
-	snprintf(buf, 256, "%s:%d: ", J->filename, node->line);
+	sprintf(buf, "%s:%d: ", J->filename, node->line);
 	strcat(buf, hmm);
 
 	js_newsyntaxerror(J, buf);

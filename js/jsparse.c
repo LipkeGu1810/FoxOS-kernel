@@ -34,14 +34,10 @@ static void jsP_error(js_State *J, const char *fmt, ...)
 {
 	va_list ap;
 	char buf[512];
-	char msgbuf[256];
+	char* hmm = "\nHmm something is wrong and @Glowman554 make me look nice\n";
 
-	va_start(ap, fmt);
-	vsnprintf(msgbuf, 256, fmt, ap);
-	va_end(ap);
-
-	snprintf(buf, 256, "%s:%d: ", J->filename, J->lexline);
-	strcat(buf, msgbuf);
+	sprintf(buf, "%s:%d: ", J->filename, J->lexline);
+	strcat(buf, hmm);
 
 	js_newsyntaxerror(J, buf);
 	js_throw(J);
@@ -51,13 +47,9 @@ static void jsP_warning(js_State *J, const char *fmt, ...)
 {
 	va_list ap;
 	char buf[512];
-	char msg[256];
+	char* hmm = "\nHmm something is wrong and @Glowman554 make me look nice\n";
 
-	va_start(ap, fmt);
-	vsnprintf(msg, sizeof msg, fmt, ap);
-	va_end(ap);
-
-	snprintf(buf, sizeof buf, "%s:%d: warning: %s", J->filename, J->lexline, msg);
+	sprintf(buf, "%s:%d: warning: %s", J->filename, J->lexline, hmm);
 	js_report(J, buf);
 }
 
