@@ -36,8 +36,8 @@ static void jsB_parseInt(js_State *J)
 	const char *s = js_tostring(J, 1);
 	int radix = js_isdefined(J, 2) ? js_tointeger(J, 2) : 10;
 	double sign = 1;
-	double n;
-	char *e;
+	double n = 0.0;
+	char *e = NULL;
 
 	while (jsY_iswhite(*s) || jsY_isnewline(*s))
 		++s;
