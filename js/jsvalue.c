@@ -173,7 +173,8 @@ double js_stringtofloat(const char *s, char **ep)
 	if (isflt || e - s > 9)
 		n = js_strtod(s, &end);
 	else
-		n = strtol(s, &end, 10);
+		uh_oh();
+		//n = strtol(s, &end, 10);
 	if (end == e) {
 		*ep = (char*)e;
 		return n;
@@ -188,8 +189,10 @@ double jsV_stringtonumber(js_State *J, const char *s)
 	char *e;
 	double n;
 	while (jsY_iswhite(*s) || jsY_isnewline(*s)) ++s;
-	if (s[0] == '0' && (s[1] == 'x' || s[1] == 'X') && s[2] != 0)
-		n = strtol(s + 2, &e, 16);
+	if (s[0] == '0' && (s[1] == 'x' || s[1] == 'X') && s[2] != 0) {
+		uh_oh();
+		//n = strtol(s + 2, &e, 16);
+	}
 	else if (!strncmp(s, "Infinity", 8))
 		n = INFINITY, e = (char*)s + 8;
 	else if (!strncmp(s, "+Infinity", 9))

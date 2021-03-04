@@ -253,6 +253,7 @@ struct sortslot {
 	js_State *J;
 };
 
+/*
 static int sortcmp(const void *avoid, const void *bvoid)
 {
 	const struct sortslot *aslot = avoid, *bslot = bvoid;
@@ -268,7 +269,7 @@ static int sortcmp(const void *avoid, const void *bvoid)
 	if (uny) return -1;
 
 	if (js_iscallable(J, 1)) {
-		js_copy(J, 1); /* copy function */
+		js_copy(J, 1);
 		js_pushundefined(J);
 		js_pushvalue(J, *a);
 		js_pushvalue(J, *b);
@@ -286,6 +287,7 @@ static int sortcmp(const void *avoid, const void *bvoid)
 	}
 	return c;
 }
+*/
 
 static void Ap_sort(js_State *J)
 {
