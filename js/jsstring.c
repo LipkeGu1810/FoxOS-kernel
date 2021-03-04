@@ -367,6 +367,7 @@ static void Sp_substr(js_State *J)
 
 static void Sp_toLowerCase(js_State *J)
 {
+	uh_oh();
 	const char *src = checkstring(J, 0);
 	const char *s;
 	char *dst, *d;
@@ -387,7 +388,7 @@ static void Sp_toLowerCase(js_State *J)
 	} else {
 		dst = js_malloc(J, len + 1);
 		for (i = 0; i < len; ++i) {
-			dst[i] = tolower(src[i]);
+			//dst[i] = tolower(src[i]);
 		}
 	}
 	if (js_try(J)) {
@@ -401,6 +402,7 @@ static void Sp_toLowerCase(js_State *J)
 
 static void Sp_toUpperCase(js_State *J)
 {
+	uh_oh();
 	const char *src = checkstring(J, 0);
 	const char *s;
 	char *dst, *d;
@@ -421,7 +423,7 @@ static void Sp_toUpperCase(js_State *J)
 	} else {
 		dst = js_malloc(J, len + 1);
 		for (i = 0; i < len; ++i) {
-			dst[i] = toupper(src[i]);
+			//dst[i] = toupper(src[i]);
 		}
 	}
 	if (js_try(J)) {

@@ -496,3 +496,16 @@ EXPOSEC bool isfinite(double __x){
 EXPOSEC bool signbit(double __x){ 
 	return __builtin_signbit(__x);
 }
+
+EXPOSEC bool isnan(double __x){ 
+	return __builtin_isnan(__x); 
+}
+
+EXPOSEC bool isinf(double __x){ 
+	return __builtin_isinf(__x); 
+}
+
+EXPOSEC void abort() {
+	renderer::global_font_renderer->printf("Uh Oh something is wrong here aborting now!\n");
+	exit(0xf00d);
+}

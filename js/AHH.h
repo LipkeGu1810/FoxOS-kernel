@@ -78,6 +78,9 @@ EXPOSEC int strncmp( const char * s1, const char * s2, size_t n );
 EXPOSEC void putchar(char c);
 EXPOSEC bool isfinite(double __x);
 EXPOSEC bool signbit(double __x);
+EXPOSEC bool isnan(double __x);
+EXPOSEC bool isinf(double __x);
+EXPOSEC void abort();
 
 #define assert(expr)														\
 	((void) sizeof ((expr) ? 1 : 0), __extension__ ({						\

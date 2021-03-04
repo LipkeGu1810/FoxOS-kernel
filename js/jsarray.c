@@ -289,6 +289,7 @@ static int sortcmp(const void *avoid, const void *bvoid)
 
 static void Ap_sort(js_State *J)
 {
+	uh_oh();
 	struct sortslot *array = NULL;
 	int i, n, len;
 
@@ -325,7 +326,7 @@ static void Ap_sort(js_State *J)
 		}
 	}
 
-	qsort(array, n, sizeof *array, sortcmp);
+	//qsort(array, n, sizeof *array, sortcmp);
 
 	for (i = 0; i < n; ++i) {
 		js_pushvalue(J, array[i].v);
