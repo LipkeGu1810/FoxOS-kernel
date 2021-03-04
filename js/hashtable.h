@@ -335,6 +335,8 @@ retrieved by calling `hashtable_items` and `hashtable_keys`, while keeping the h
     #define HASHTABLE_U32 unsigned int
 #endif
 
+#include "AHH.h"
+
 struct hashtable_internal_slot_t
     {
     HASHTABLE_U32 key_hash;

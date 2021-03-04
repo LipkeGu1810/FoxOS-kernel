@@ -22,8 +22,7 @@ static void *js_defaultalloc(void *actx, void *ptr, int size)
 
 static void js_defaultreport(js_State *J, const char *message)
 {
-	printf(message);
-	putchar('\n');
+	printf("%s\n", message);
 }
 
 static void js_defaultpanic(js_State *J)
