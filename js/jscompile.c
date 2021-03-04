@@ -19,7 +19,7 @@ static void cstm(JF, js_Ast *stm);
 
 void jsC_error(js_State *J, js_Ast *node, const char *fmt, ...)
 {
-	va_list ap;
+	//va_list ap;
 	char buf[512];
 	char* hmm = "\nHmm something is wrong and @Glowman554 make me look nice\n";
 

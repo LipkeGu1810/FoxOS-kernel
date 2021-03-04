@@ -461,7 +461,7 @@ EXPOSEC char* strrchr (const char* s, int c) {
 }
 
 EXPOSEC void not_implemented(const char* __file, unsigned int __line) {
-	renderer::global_font_renderer->printf("The feature in the file: %s at the line: %d isn't implemented yet!", __file, __line);
+	renderer::global_font_renderer->printf("The feature in the file: %s at the line: %d isn't implemented yet!\n@Glowman554 please do that as soon as posible.\n", __file, __line);
 	while(1);
 }
 
@@ -507,7 +507,7 @@ EXPOSEC bool isinf(double __x){
 }
 
 EXPOSEC void abort() {
-	renderer::global_font_renderer->printf("Uh Oh something is wrong here aborting now!\n");
+	renderer::global_font_renderer->printf("Uh Oh something is wrong here im aborting now!\n@Glowman554 i want to look nice.\n");
 	exit(0xf00d);
 }
 

@@ -56,8 +56,8 @@ static void Math_atan(js_State *J)
 
 static void Math_atan2(js_State *J)
 {
-	double y = js_tonumber(J, 1);
-	double x = js_tonumber(J, 2);
+	//double y = js_tonumber(J, 1);
+	//double x = js_tonumber(J, 2);
 	//js_pushnumber(J, atan2(y, x));
 	uh_oh();
 }
@@ -94,8 +94,8 @@ static void Math_log(js_State *J)
 
 static void Math_pow(js_State *J)
 {
-	double x = js_tonumber(J, 1);
-	double y = js_tonumber(J, 2);
+	//double x = js_tonumber(J, 1);
+	//double y = js_tonumber(J, 2);
 	//if (!isfinite(y) && fabs(x) == 1)
 		//js_pushnumber(J, NAN);
 	//else

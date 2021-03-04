@@ -92,7 +92,6 @@ static void js_newerrorx(js_State *J, const char *message, js_Object *prototype)
 		js_newerrorx(J, s, J->Name##_prototype); \
 	} \
 	void js_##name(js_State *J, const char *fmt, ...) { \
-		va_list ap; \
 		char* buf = "\nHmm something is wrong and @Glowman554 make me look nice\n"; \
 		js_newerrorx(J, buf, J->Name##_prototype); \
 		js_throw(J); \

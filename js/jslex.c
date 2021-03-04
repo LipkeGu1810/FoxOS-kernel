@@ -40,7 +40,7 @@ JS_NORETURN static void jsY_error(js_State *J, const char *fmt, ...) JS_PRINTFLI
 
 static void jsY_error(js_State *J, const char *fmt, ...)
 {
-	va_list ap;
+	//va_list ap;
 	char buf[512];
 
 	char* hmm = "\nHmm something is wrong and @Glowman554 make me look nice\n";
