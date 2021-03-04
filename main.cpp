@@ -15,6 +15,10 @@
 #include <driver/driver.h>
 #include <driver/serial.h>
 
+extern "C" {
+	#include <mujs/mujs.h>
+}
+
 class PrintfKeyboardEventHandler : public driver::KeyboardEventHandler{
 	public:
 		void KeyDown(char c){
@@ -32,6 +36,12 @@ class MouseRendererMouseEventHandler : public driver::MouseEventHandler{
 			renderer::global_mouse_renderer->on_mouse_move(mouse_packet);
 		}
 };
+
+extern "C" void hello(js_State *J) {
+	const char *name = js_tostring(J, 1);
+	renderer::global_font_renderer->printf("Hello %s!\n", name);
+	js_pushundefined(J);
+}
 
 extern "C" void _start(bootinfo_t* bootinfo) {
 	KernelInfo kernel_info = init_kernel(bootinfo);
@@ -66,6 +76,15 @@ extern "C" void _start(bootinfo_t* bootinfo) {
 
 	free(address);
 	renderer::global_font_renderer->printf("Testing malloc after free: 0x%x\n", (uint64_t)malloc(0x100));
+
+	js_State *J = js_newstate(NULL, NULL, JS_STRICT);
+
+	//js_newcfunction(J, hello, "hello", 1);
+	//js_setglobal(J, "hello");
+
+	js_dostring(J, "hello('world');");
+
+	//js_freestate(J);
 
 	while (true);
 }

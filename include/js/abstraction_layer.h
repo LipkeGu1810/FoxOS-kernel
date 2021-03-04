@@ -83,6 +83,7 @@ EXPOSEC bool isinf(double __x);
 EXPOSEC void abort();
 EXPOSEC void* malloc_al(size_t size);
 EXPOSEC void free_al(void* address);
+EXPOSEC void* realloc(void* address, size_t size);
 
 #define assert(expr)														\
 	((void) sizeof ((expr) ? 1 : 0), __extension__ ({						\

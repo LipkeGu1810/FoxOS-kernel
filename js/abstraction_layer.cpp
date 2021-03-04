@@ -518,3 +518,19 @@ EXPOSEC void* malloc_al(size_t size) {
 EXPOSEC void free_al(void* address) {
 	free(address);
 }
+
+EXPOSEC void* realloc(void* ptr, size_t size) {
+	if (size == 0){
+		free(ptr);
+		return NULL;
+	} else if (!ptr) {
+		return malloc(size);
+	} else {
+		void *ptrNew = malloc(size);
+		if (ptrNew) {
+			memcpy(ptrNew, ptr, size);
+			free(ptr);
+		}
+		return ptrNew;
+    }
+}
