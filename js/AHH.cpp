@@ -1,6 +1,7 @@
 #include "AHH.h"
 
 #include <renderer/font_renderer.h>
+#include <memory/heap.h>
 
 EXPOSEC void* memset(void* buf, int c, int n){
 	unsigned char* p = (unsigned char*) buf;
@@ -508,4 +509,12 @@ EXPOSEC bool isinf(double __x){
 EXPOSEC void abort() {
 	renderer::global_font_renderer->printf("Uh Oh something is wrong here aborting now!\n");
 	exit(0xf00d);
+}
+
+EXPOSEC void* malloc_al(size_t size) {
+	return malloc(size);
+}
+
+EXPOSEC void free_al(void* address) {
+	free(address);
 }

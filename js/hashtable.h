@@ -403,8 +403,8 @@ struct hashtable_t
     #define _CRT_NONSTDC_NO_DEPRECATE 
     #undef _CRT_SECURE_NO_WARNINGS
     #define _CRT_SECURE_NO_WARNINGS
-    #define HASHTABLE_MALLOC( ctx, size ) ( malloc( size ) )
-    #define HASHTABLE_FREE( ctx, ptr ) ( free( ptr ) )
+    #define HASHTABLE_MALLOC( ctx, size ) ( malloc_al( size ) )
+    #define HASHTABLE_FREE( ctx, ptr ) ( free_al( ptr ) )
 #endif
 
 
