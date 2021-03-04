@@ -9,10 +9,10 @@
 #include <limits.h>
 
 #include <mujs/mujs.h>
-#include "hashtable.h"
-#include "jsutil.h"
+#include <js/hashtable.h>
+#include <js/jsutil.h>
 
-#include "AHH.h"
+#include <js/abstraction_layer.h>
 
 /* Microsoft Visual C */
 #ifdef _MSC_VER

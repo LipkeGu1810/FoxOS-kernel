@@ -1,10 +1,10 @@
 
 
-#include "jsi.h"
-#include "jsvalue.h"
-#include "jsbuiltin.h"
-#include "utf.h"
-#include "regexp.h"
+#include <js/jsi.h>
+#include <js/jsvalue.h>
+#include <js/jsbuiltin.h>
+#include <js/utf.h>
+#include <js/regexp.h>
 
 static int js_doregexec(js_State *J, Reprog *prog, const char *string, Resub *sub, int eflags)
 {

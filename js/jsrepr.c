@@ -1,9 +1,9 @@
-#include "jsi.h"
-#include "jslex.h"
-#include "jsvalue.h"
-#include "jsbuiltin.h"
-#include "utf.h"
-#include "jscompile.h"
+#include <js/jsi.h>
+#include <js/jslex.h>
+#include <js/jsvalue.h>
+#include <js/jsbuiltin.h>
+#include <js/utf.h>
+#include <js/jscompile.h>
 
 extern void fmtnum(js_State *J, js_StringBuffer **sb, double n);
 static void reprvalue(js_State *J, js_StringBuffer **sb);

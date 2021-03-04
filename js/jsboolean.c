@@ -1,6 +1,6 @@
-#include "jsi.h"
-#include "jsvalue.h"
-#include "jsbuiltin.h"
+#include <js/jsi.h>
+#include <js/jsvalue.h>
+#include <js/jsbuiltin.h>
 
 static void jsB_new_Boolean(js_State *J)
 {

@@ -1,18 +1,18 @@
-#include "jsi.h"
-#include "jsparse.h"
-#include "jscompile.h"
-#include "jsvalue.h"
+#include <js/jsi.h>
+#include <js/jsparse.h>
+#include <js/jscompile.h>
+#include <js/jsvalue.h>
 
-#include "utf.h"
+#include <js/utf.h>
 
 
 static const char *astname[] = {
-#include "astnames.h"
+#include <js/astnames.h>
 NULL
 };
 
 static const char *opname[] = {
-#include "opnames.h"
+#include <js/opnames.h>
 NULL
 };
 

@@ -1,8 +1,8 @@
 
 
-#include "regexp.h"
-#include "utf.h"
-#include "AHH.h"
+#include <js/regexp.h>
+#include <js/utf.h>
+#include <js/abstraction_layer.h>
 
 #define emit regemit
 #define next regnext

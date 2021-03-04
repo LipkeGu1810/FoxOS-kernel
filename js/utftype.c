@@ -1,4 +1,4 @@
-#include "utf.h"
+#include <js/utf.h>
 
 #define bsearch jsU_bsearch
 #define nelem(a) (int)(sizeof (a) / sizeof (a)[0])
@@ -212,7 +212,7 @@ static const Rune __space2[] =
 	0x0020,	0x0020,	/* space */
 	0x00a0,	0x00a0,	/*   */
 	0x2000,	0x200b,	/*   - ​ */
-	0x2028,	0x2029,	/*   -   */
+	0x2028,	0x2029,	/*  -  */
 	0x3000,	0x3000,	/* 　 */
 	0xfeff,	0xfeff,	/* ﻿ */
 };

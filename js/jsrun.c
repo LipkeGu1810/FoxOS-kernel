@@ -1,11 +1,11 @@
 #define HASHTABLE_IMPLEMENTATION
 
-#include "jsi.h"
-#include "jscompile.h"
-#include "jsvalue.h"
-#include "jsrun.h"
+#include <js/jsi.h>
+#include <js/jscompile.h>
+#include <js/jsvalue.h>
+#include <js/jsrun.h>
 
-#include "utf.h"
+#include <js/utf.h>
 
 static void jsR_run(js_State *J, js_Function *F);
 

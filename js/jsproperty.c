@@ -1,5 +1,5 @@
-#include "jsi.h"
-#include "jsvalue.h"
+#include <js/jsi.h>
+#include <js/jsvalue.h>
 
 static js_Property *newproperty(js_State *J, js_Object *obj, const char *name)
 {

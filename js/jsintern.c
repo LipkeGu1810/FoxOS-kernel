@@ -1,5 +1,5 @@
-#include "jsi.h"
-#include "utf.h"
+#include <js/jsi.h>
+#include <js/utf.h>
 
 /* Use an AA-tree to quickly look up interned strings. */
 

@@ -1,6 +1,6 @@
 /* Locale-independent implementations of string <-> double conversions. */
 
-#include "jsi.h"
+#include <js/jsi.h>
 
 #if defined(_MSC_VER) && (_MSC_VER < 1700) /* VS2012 has stdint.h */
 typedef unsigned int uint32_t;

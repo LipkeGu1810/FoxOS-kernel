@@ -1,6 +1,6 @@
-#include "jsi.h"
-#include "jslex.h"
-#include "utf.h"
+#include <js/jsi.h>
+#include <js/jslex.h>
+#include <js/utf.h>
 
 #ifndef isalpha
 #define isalpha(c) ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))

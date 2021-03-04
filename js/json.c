@@ -1,9 +1,9 @@
-#include "jsi.h"
-#include "jslex.h"
-#include "jsvalue.h"
-#include "jsbuiltin.h"
+#include <js/jsi.h>
+#include <js/jslex.h>
+#include <js/jsvalue.h>
+#include <js/jsbuiltin.h>
 
-#include "utf.h"
+#include <js/utf.h>
 
 static void jsonnext(js_State *J)
 {

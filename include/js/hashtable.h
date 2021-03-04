@@ -13,7 +13,7 @@ before you include this file in *one* C/C++ file to create the implementation.
 #ifndef hashtable_h
 #define hashtable_h
 
-#include "AHH.h"
+#include <js/abstraction_layer.h>
 
 #ifndef HASHTABLE_U64
     #define HASHTABLE_U64 unsigned long long
@@ -335,7 +335,7 @@ retrieved by calling `hashtable_items` and `hashtable_keys`, while keeping the h
     #define HASHTABLE_U32 unsigned int
 #endif
 
-#include "AHH.h"
+#include <js/abstraction_layer.h>
 
 struct hashtable_internal_slot_t
     {

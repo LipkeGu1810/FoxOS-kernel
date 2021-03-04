@@ -1,8 +1,8 @@
-#include "jsi.h"
-#include "jslex.h"
-#include "jscompile.h"
-#include "jsvalue.h"
-#include "jsbuiltin.h"
+#include <js/jsi.h>
+#include <js/jslex.h>
+#include <js/jscompile.h>
+#include <js/jsvalue.h>
+#include <js/jsbuiltin.h>
 
 static void jsB_globalf(js_State *J, const char *name, js_CFunction cfun, int n)
 {

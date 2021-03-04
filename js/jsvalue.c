@@ -1,8 +1,8 @@
-#include "jsi.h"
-#include "jslex.h"
-#include "jscompile.h"
-#include "jsvalue.h"
-#include "utf.h"
+#include <js/jsi.h>
+#include <js/jslex.h>
+#include <js/jscompile.h>
+#include <js/jsvalue.h>
+#include <js/utf.h>
 
 int jsV_numbertointeger(double n)
 {

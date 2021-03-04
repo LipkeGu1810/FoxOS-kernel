@@ -1,8 +1,8 @@
-#include "jsi.h"
-#include "jsparse.h"
-#include "jscompile.h"
-#include "jsvalue.h"
-#include "jsbuiltin.h"
+#include <js/jsi.h>
+#include <js/jsparse.h>
+#include <js/jscompile.h>
+#include <js/jsvalue.h>
+#include <js/jsbuiltin.h>
 
 static void jsB_Function(js_State *J)
 {

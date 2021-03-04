@@ -1,7 +1,7 @@
 #ifndef mujs_h
 #define mujs_h
 
-#include "../js/AHH.h"
+#include <js/abstraction_layer.h>
 
 #ifdef __cplusplus
 extern "C" {

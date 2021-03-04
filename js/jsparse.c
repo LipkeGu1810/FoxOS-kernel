@@ -1,6 +1,6 @@
-#include "jsi.h"
-#include "jslex.h"
-#include "jsparse.h"
+#include <js/jsi.h>
+#include <js/jslex.h>
+#include <js/jsparse.h>
 
 #ifndef JS_NOCOMPILER
 

@@ -13,7 +13,7 @@
  */
 
 
-#include "utf.h"
+#include <js/utf.h>
 
 typedef unsigned char uchar;
 

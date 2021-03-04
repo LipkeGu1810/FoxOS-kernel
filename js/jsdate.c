@@ -1,7 +1,6 @@
-#include "jsi.h"
-#include "jsvalue.h"
-#include "jsbuiltin.h"
-
+#include <js/jsi.h>
+#include <js/jsvalue.h>
+#include <js/jsbuiltin.h>
 
 #define js_optnumber(J,I,V) (js_isdefined(J,I) ? js_tonumber(J,I) : V)
 

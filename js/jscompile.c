@@ -1,8 +1,8 @@
-#include "jsi.h"
-#include "jslex.h"
-#include "jsparse.h"
-#include "jscompile.h"
-#include "jsvalue.h" /* for jsV_numbertostring */
+#include <js/jsi.h>
+#include <js/jslex.h>
+#include <js/jsparse.h>
+#include <js/jscompile.h>
+#include <js/jsvalue.h> /* for jsV_numbertostring */
 
 #ifndef JS_NOCOMPILER
 

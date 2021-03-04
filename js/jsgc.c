@@ -1,9 +1,9 @@
-#include "jsi.h"
-#include "jscompile.h"
-#include "jsvalue.h"
-#include "jsrun.h"
+#include <js/jsi.h>
+#include <js/jscompile.h>
+#include <js/jsvalue.h>
+#include <js/jsrun.h>
 
-#include "regexp.h"
+#include <js/regexp.h>
 
 static void jsG_markobject(js_State *J, int mark, js_Object *obj);
 

@@ -1,9 +1,9 @@
-#include "jsi.h"
-#include "jsparse.h"
-#include "jscompile.h"
-#include "jsvalue.h"
-#include "jsrun.h"
-#include "jsbuiltin.h"
+#include <js/jsi.h>
+#include <js/jsparse.h>
+#include <js/jscompile.h>
+#include <js/jsvalue.h>
+#include <js/jsrun.h>
+#include <js/jsbuiltin.h>
 
 
 static void *js_defaultalloc(void *actx, void *ptr, int size)

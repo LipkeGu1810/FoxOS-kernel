@@ -1,4 +1,4 @@
-#include "jsi.h"
+#include <js/jsi.h>
 
 static inline uint16_t __bswap16(uint16_t x)
 {
