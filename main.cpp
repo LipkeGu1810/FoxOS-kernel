@@ -69,22 +69,19 @@ extern "C" void _start(bootinfo_t* bootinfo) {
 
 	driver_manager.activate_all(false);
 
-	renderer::global_font_renderer->printf("Testing malloc: 0x%x\n", (uint64_t)malloc(0x8000));
-	void* address = malloc(0x8000);
-	renderer::global_font_renderer->printf("Address: 0x%x\n", (uint64_t)address);
-	renderer::global_font_renderer->printf("More malloc: 0x%x\n\n", (uint64_t)malloc(0x100));
-
-	free(address);
-	renderer::global_font_renderer->printf("Testing malloc after free: 0x%x\n", (uint64_t)malloc(0x100));
-
 	js_State *J = js_newstate(NULL, NULL, JS_STRICT);
+	renderer::global_font_renderer->printf("Newstate");
 
-	//js_newcfunction(J, hello, "hello", 1);
-	//js_setglobal(J, "hello");
-
+	js_newcfunction(J, hello, "hello", 1);
+	renderer::global_font_renderer->printf("new function");
+	js_setglobal(J, "hello");
+	renderer::global_font_renderer->printf("set global");
+	
 	js_dostring(J, "hello('world');");
+	renderer::global_font_renderer->printf("Do string");
 
-	//js_freestate(J);
+	js_freestate(J);
+	renderer::global_font_renderer->printf("Free state");
 
 	while (true);
 }

@@ -1,6 +1,10 @@
 #include <bitmap.h>
 
 bool Bitmap::operator[](uint64_t index){
+	return get(index);
+}
+
+bool Bitmap::get(uint64_t index){
 	if (index > size * 8) return false;
 
 	uint64_t byteIndex = index / 8;
